@@ -150,7 +150,7 @@ module OpenvpnPlugin
                            OpenSSL::BN.new(rserial)
                          end
 
-        revoked.time = if time.is_a?
+        revoked.time = if time.is_a? Time
                          time
                        else
                          Time.parse(time)
