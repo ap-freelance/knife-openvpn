@@ -305,7 +305,7 @@ module OpenvpnPlugin
     end
   
     class OpenvpnUserCreate < Openvpn
-      banner 'knife openvpn user create SERVERNAME USERNAME (options)'
+      banner 'knife openvpn user create SERVERNAME USERNAME TWOFACTOR (options)'
   
       option :databag_secret_file,
              long: '--secret-file PATH',
@@ -343,9 +343,9 @@ module OpenvpnPlugin
       end
   
       def check_arguments
-        unless name_args.size == 2
-          fail_with 'Specify SERVERNAME and USERNAME for new openvpn user!'
-        end
+#         unless name_args.size == 2
+#           fail_with 'Specify SERVERNAME and USERNAME for new openvpn user!'
+#         end
       end
     end
   
