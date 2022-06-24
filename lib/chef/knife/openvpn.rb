@@ -444,6 +444,9 @@ module OpenvpnPlugin
       config_content << 'nobind' << newline
       config_content << 'persist-key' << newline
       config_content << 'persist-tun' << newline
+      config_content << 'auth-user-pass' << newline if config['use_2fa']
+      config_content << 'auth-nocache' << newline if config['use_2fa']
+      config_content << 'reneg-sec 0' << newline if config['use_2fa']
       config_content
     end
 
